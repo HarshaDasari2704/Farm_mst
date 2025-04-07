@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="styles/buyer.css" />
+</head>
+<body>
+  <header class="buyer-dashboard">
+    <h1>Farmers Marketplace</h1>
+    <nav>
+      <a href="buyer-dashboard.html">Products</a>
+      <a href="profile.html">Profile</a>
+      <a href="cart.html">Cart <span id="cartCount">0</span></a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+  <main class="product-details">
+    <img id="productImage" src="" alt="Product Image" />
+    <h2 id="productName">Loading...</h2>
+    <p id="productDescription">Details about the product will appear here.</p>
+
+    <h3>Available Farmers</h3>
+    <div class="farmer-options" id="farmerOptions">
+      <!-- JS will populate -->
+    </div>
+
+    <h3>Reviews</h3>
+    <div class="reviews-section" id="reviews">
+      <!-- JS will populate -->
+    </div>
+
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </main>
+  <script src="/js/product-details.js"></script>
+</body>
+</html>

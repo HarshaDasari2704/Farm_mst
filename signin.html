@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmBuddy</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="signin.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <!-- Sign Up -->
+      <div class="form-container sign-up-container">
+        <form action="https://formsubmit.co/el/vadezu" method="POST">
+          <h1>Create Your FarmBuddy Account</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email to register</span>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button>Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Sign In -->
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Welcome Back to FarmBuddy</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>Sign in with your FarmBuddy account</span>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <select name="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="farmer">Sign in as Farmer</option>
+            <option value="buyer">Sign in as Buyer</option>
+          </select>
+          <a href="#">Forgot your password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back, Farmer or Buyer!</h1>
+            <p>To continue growing or shopping with FarmBuddy, please sign in.</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Grower or Shopper!</h1>
+            <p>Join the FarmBuddy community—whether you're cultivating or consuming!</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="signin.js"></script>
+  </body>
+</html>

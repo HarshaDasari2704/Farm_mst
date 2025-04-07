@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard - Farmers Marketplace</title>
+    <link rel="stylesheet" href="styles/buyer.css">
+</head>
+<body>
+    <div class="buyer-dashboard">
+        <header>
+            <h1>Farm buddy</h1>
+            <nav>
+                <a href="#" class="active">Products</a>
+                <a href="cart.html">Cart <span id="cartCount">0</span></a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="filters">
+                <input type="text" placeholder="Search products...">
+                <select>
+                    <option value="">All Categories</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="grains">Grains</option>
+                </select>
+                <select>
+                    <option value="">Sort by</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <div class="products-container">
+                <!-- Example Product Card -->
+                <a href="product-details.html" class="product-card">
+                    <img src="https://source.unsplash.com/300x200/?vegetables" alt="Product Image">
+                    <h3>Fresh Tomatoes</h3>
+                    <p>₹ 40 per kg</p>
+                    <p>Farmer: Ramesh</p>
+                </a>
+            
+                <a href="product-details.html" class="product-card">
+                    <img src="https://source.unsplash.com/300x200/?fruits" alt="Product Image">
+                    <h3>Organic Bananas</h3>
+                    <p>₹ 30 per dozen</p>
+                    <p>Farmer: Sita</p>
+                </a>
+            
+                <a href="product-details.html" class="product-card">
+                    <img src="https://source.unsplash.com/300x200/?grains" alt="Product Image">
+                    <h3>Wheat Grain</h3>
+                    <p>₹ 25 per kg</p>
+                    <p>Farmer: Mohan</p>
+                </a>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="buyer.js"></script>
+</body>
+</html>

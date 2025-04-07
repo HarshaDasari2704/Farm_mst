@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmer Dashboard - Farmers Marketplace</title>
+  <link rel="stylesheet" href="styles/common.css" />
+  <link rel="stylesheet" href="styles/farmer.css" />
+</head>
+<body>
+  <div class="farmer-dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="farmer-profile">
+        <img src="https://i.pinimg.com/736x/15/0f/a8/150fa8800b0a0d5633abc1d1c4db3d87.jpg" alt="Farmer Photo" />
+        <h3 id="farmerName">Harsha dasari</h3>
+        <p>perupalem</p>
+      </div>
+      <ul>
+        <li><a href="#" data-page="Profile">Profile</a></li>
+        <li><a href="#" class="active" data-page="dashboard">Dashboard</a></li>
+        <li><a href="#" data-page="products">My Products</a></li>
+        <li><a href="#" data-page="orders">View Orders</a></li>
+        <li><a href="index.html" id="farmerLogout">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Dashboard Overview -->
+      <div id="dashboardContent">
+        <h2>Welcome, John! 👨‍🌾</h2>
+        <p class="sub-text">Here’s a quick overview of your farm's performance.</p>
+
+        <div class="dashboard-summary">
+          <div class="detail-card">
+            <h3>Total Products</h3>
+            <p><strong>12</strong></p>
+            <span class="sub-text">Active listings this month</span>
+          </div>
+          <div class="detail-card">
+            <h3>Orders Received</h3>
+            <p><strong>87</strong></p>
+            <span class="sub-text">Across all crops</span>
+          </div>
+          <div class="detail-card">
+            <h3>Monthly Revenue</h3>
+            <p><strong>₹ 42,300</strong></p>
+            <span class="sub-text">April 2025</span>
+          </div>
+          <div class="detail-card">
+            <h3>Top Product</h3>
+            <p><strong>Organic Tomatoes</strong></p>
+            <span class="sub-text">Sold 320 kg this month</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Recent Orders</h3>
+        <div class="order-list">
+          <div class="order-item">
+            <p>Order #145 - Cabbage (10kg)</p>
+            <span class="status badge-pending">Pending</span>
+          </div>
+          <div class="order-item">
+            <p>Order #144 - Spinach (3kg)</p>
+            <span class="status badge-completed">Completed</span>
+          </div>
+          <div class="order-item">
+            <p>Order #143 - Onions (15kg)</p>
+            <span class="status badge-completed">Completed</span>
+          </div>
+          <div class="order-item">
+            <p>Order #142 - Potatoes (25kg)</p>
+            <span class="status badge-pending">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Section -->
+      <div id="productsContent" class="hidden">
+        <h2>My Products</h2>
+        <button id="addProductBtn" class="btn-primary">Add New Product</button>
+
+        <div class="product-form hidden">
+          <h3>Add New Product</h3>
+          <form id="newProductForm">
+            <input type="text" placeholder="Product Name" required />
+            <input type="number" placeholder="Quantity (kg)" required />
+            <input type="number" placeholder="Price per kg (₹)" required />
+            <input type="file" id="productImage" accept="image/*" required />
+            <img id="productPreview" class="product-preview hidden" />
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product cards will be added here dynamically -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/farmer.js"></script>
+</body>
+</html>
