@@ -17,19 +17,58 @@
         <p>perupalem</p>
       </div>
       <ul>
-        <li><a href="#" data-page="Profile">Profile</a></li>
-        <li><a href="#" class="active" data-page="dashboard">Dashboard</a></li>
-        <li><a href="#" data-page="products">My Products</a></li>
-        <li><a href="#" data-page="orders">View Orders</a></li>
-        <li><a href="index.html" id="farmerLogout">Logout</a></li>
-      </ul>
+        <li><a href="#" data-page="dashboardContent" class="active">Dashboard</a></li>
+        <li><a href="#" data-page="productsContent">My Products</a></li>
+        <li><a href="#" data-page="ordersContent">View Orders</a></li>
+        <li><a href="#" data-page="ProfileContent">Profile</a></li>
+        <li><a href="signin.html" id="farmerLogout">Logout</a></li>
+      </ul>      
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
+      <!-- Orders Section -->
+      <div id="ordersContent" class="hidden">
+        <h2>View Orders</h2>
+
+        <h3>Pending Orders</h3>
+        <div class="order-row pending-orders">
+          <!-- Orders will be added dynamically -->
+        </div>
+
+        <h3>Completed Orders</h3>
+        <div class="order-row completed-orders">
+          <!-- Completed orders go here -->
+        </div>
+      </div>
+
+      <!-- Profile Section -->
+      <div id="ProfileContent" class="hidden">
+        <h2>My Profile</h2>
+        <form id="profileForm">
+          <label for="profilePic">Profile Picture</label>
+          <input type="file" id="profilePic" accept="image/*" />
+          <img id="profilePreview" class="profile-preview" alt="Profile Preview" />
+
+          <label for="farmerNameInput">Name</label>
+          <input type="text" id="farmerNameInput" placeholder="Your Name" value="Harsha dasari" required />
+
+          <label for="farmerAddress">Address</label>
+          <input type="text" id="farmerAddress" placeholder="Your Address" value="perupalem" required />
+
+          <label for="farmerEmail">Email</label>
+          <input type="email" id="farmerEmail" placeholder="example@mail.com" required />
+
+          <label for="farmerMobile">Mobile Number</label>
+          <input type="tel" id="farmerMobile" placeholder="1234567890" required />
+
+          <button type="submit" class="btn-primary">Save Changes</button>
+        </form>
+      </div>
+
       <!-- Dashboard Overview -->
-      <div id="dashboardContent">
-        <h2>Welcome, John! 👨‍🌾</h2>
+      <div id="dashboardContent" >
+        <h2>Welcome, Harsha darsari! 👨‍🌾</h2>
         <p class="sub-text">Here’s a quick overview of your farm's performance.</p>
 
         <div class="dashboard-summary">
