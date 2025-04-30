@@ -55,58 +55,36 @@
     </div>
   </main>
 
- <!-- Profile Panel -->
-<div class="profile-panel" id="profilePanel">
-  <div class="profile-panel-content">
-    <div class="profile-header">
-      <img src="path-to-default-image.jpg" alt="Profile Preview" class="profile-preview" id="profilePreview">
-      <h2>User Profile</h2>
+  <!-- Profile Panel -->
+  <div class="profile-panel" id="profilePanel">
+    <div class="profile-panel-content">
+      <div class="profile-header">
+        <img src="path-to-default-image.jpg" alt="Profile Preview" class="profile-preview" id="profilePreview">
+        <h2>User Profile</h2>
+      </div>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="profileImage">Change Profile Image:</label>
+        <input type="file" id="profileImage" name="profileImage" accept="image/*">
+
+        <button type="submit">Save Changes</button>
+      </form>
     </div>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      
-      <label for="profileImage">Change Profile Image:</label>
-      <input type="file" id="profileImage" name="profileImage" accept="image/*">
-      
-      <button type="submit">Save Changes</button>
-    </form>
   </div>
-</div>
 
-<!-- Optional: Button to Open Profile Panel -->
-<button id="openProfileBtn">Open Profile</button>
-
-<script>
-  // Toggle Profile Panel visibility
-  document.getElementById('openProfileBtn').addEventListener('click', function() {
-    document.getElementById('profilePanel').classList.toggle('open');
-  });
-
-  // Optional: Handle profile image preview on file select
-  document.getElementById('profileImage').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        document.getElementById('profilePreview').src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-</script>
-
+  <!-- Optional: Button to Open Profile Panel -->
+  <button id="openProfileBtn">Open Profile</button>
 
   <!-- Cart Popup -->
   <div class="cart-popup" id="cartPopup">
     <div class="cart-popup-content">
       <h3>Cart</h3>
-      <ul id="cartList">
-        <!-- Dynamic items go here -->
-      </ul>
+      <ul id="cartList"></ul>
       <div class="total">
         <p>Total: ₹<span id="totalAmount">0</span></p>
         <button onclick="checkout()">Checkout</button>
@@ -115,34 +93,6 @@
     </div>
   </div>
 
-  <script>
-    let cartCount = 0;
-    let totalAmount = 0;
-
-    function addToCart() {
-      cartCount++;
-      totalAmount += 30; // dummy price
-      document.getElementById('cartCount').textContent = cartCount;
-      document.getElementById('totalAmount').textContent = totalAmount;
-
-      const item = document.createElement('li');
-      item.textContent = "Item x1 - ₹30";
-      document.getElementById('cartList').appendChild(item);
-    }
-
-    function toggleCartPopup() {
-      document.getElementById('cartPopup').classList.toggle('open');
-    }
-
-    function toggleProfilePanel() {
-      document.getElementById('profilePanel').classList.toggle('open');
-      document.getElementById('profileDropdown').classList.toggle('show');
-    }
-
-    function checkout() {
-      alert('Proceeding to checkout!');
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
