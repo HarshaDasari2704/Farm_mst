@@ -3,7 +3,7 @@ let totalAmount = 0;
 
 function addToCart() {
   cartCount++;
-  totalAmount += 30; // dummy price
+  totalAmount += 30; // dummy price for now
   document.getElementById('cartCount').textContent = cartCount;
   document.getElementById('totalAmount').textContent = totalAmount;
 
@@ -25,7 +25,7 @@ function checkout() {
   alert('Proceeding to checkout!');
 }
 
-// Open profile panel from floating button
+// Profile panel toggle
 document.getElementById('openProfileBtn').addEventListener('click', function() {
   document.getElementById('profilePanel').classList.toggle('open');
 });
@@ -36,4 +36,8 @@ document.getElementById('profileImage').addEventListener('change', function(even
   if (file) {
     const reader = new FileReader();
     reader.onload = function(e) {
-      document.getElementById('profilePreview').src = e.target
+      document.getElementById('profilePreview').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
