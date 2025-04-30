@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>FarmBuddy</title>
-  <link rel="stylesheet" href="style/buyer.css">
+  <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
 
@@ -13,13 +13,13 @@
       <h1>Farm<span>buddy</span></h1>
     </div>
     <nav>
-      <a class="cart-link" onclick="toggleCartPopup()">Cart
+      <a class="cart-link" id="cartLink">Cart
         <span id="cartCount">0</span>
       </a>
       <div class="profile-menu">
-        <img src="assets/images/default-profile.jpg" alt="Profile" class="profile-pic" onclick="toggleProfilePanel()">
+        <img src="assets/images/default-profile.jpg" alt="Profile" class="profile-pic" id="profilePic">
         <div class="dropdown" id="profileDropdown">
-          <a href="#" onclick="toggleProfilePanel()">Edit Profile</a>
+          <a href="#" id="editProfile">Edit Profile</a>
           <a href="#">Logout</a>
         </div>
       </div>
