@@ -36,8 +36,4 @@ document.getElementById('profileImage').addEventListener('change', function(even
   if (file) {
     const reader = new FileReader();
     reader.onload = function(e) {
-      document.getElementById('profilePreview').src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
+      document.getElementById('profilePreview').src = e.target
