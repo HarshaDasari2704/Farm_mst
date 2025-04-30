@@ -1,50 +1,41 @@
-// Mock Data
-const mockProducts = [
-    { id: 1, name: 'Tomatoes', quantity: '100kg', price: 2.5, farmer: 'John Doe', rating: 5 },
-    { id: 2, name: 'Potatoes', quantity: '200kg', price: 1.8, farmer: 'Jane Smith', rating: 4 },
-    { id: 3, name: 'Onions', quantity: '150kg', price: 1.5, farmer: 'Mike Johnson', rating: 5 }
-];
+let cartCount = 0;
+let totalAmount = 0;
 
-// Load products on page load
-document.addEventListener('DOMContentLoaded', () => {
-    loadBuyerProducts();
-    setupFilters();
+function addToCart() {
+  cartCount++;
+  totalAmount += 30; // Dummy price
+  document.getElementById('cartCount').textContent = cartCount;
+  document.getElementById('totalAmount').textContent = totalAmount;
+
+  const item = document.createElement('li');
+  item.textContent = "Item x1 - ₹30";
+  document.getElementById('cartList').appendChild(item);
+}
+
+function toggleCartPopup() {
+  document.getElementById('cartPopup').classList.toggle('open');
+}
+
+function toggleProfilePanel() {
+  document.getElementById('profilePanel').classList.toggle('open');
+  document.getElementById('profileDropdown').classList.toggle('show');
+}
+
+function checkout() {
+  alert('Proceeding to checkout!');
+}
+
+document.getElementById('openProfileBtn').addEventListener('click', function () {
+  document.getElementById('profilePanel').classList.toggle('open');
 });
 
-function loadBuyerProducts() {
-    const productsContainer = document.querySelector('.products-container');
-    productsContainer.innerHTML = mockProducts.map(product => `
-        <div class="detail-card">
-            <h3>${product.name}</h3>
-            <p>Available: ${product.quantity}</p>
-            <p>Price: $${product.price}/kg</p>
-            <div class="farmer-info">
-                <small>Sold by: ${product.farmer}</small>
-                <div>Rating: ${'⭐'.repeat(product.rating)}</div>
-            </div>
-            <button onclick="addToCart(${product.id})" class="btn-primary">Add to Cart</button>
-        </div>
-    `).join('');
-}
-
-function addToCart(id) {
-    const cartCount = document.getElementById('cartCount');
-    cartCount.textContent = parseInt(cartCount.textContent) + 1;
-    alert('Product added to cart!');
-}
-
-function setupFilters() {
-    const searchInput = document.querySelector('.filters input');
-    const categorySelect = document.querySelector('.filters select:first-of-type');
-    const sortSelect = document.querySelector('.filters select:last-of-type');
-
-    searchInput.addEventListener('input', filterProducts);
-    categorySelect.addEventListener('change', filterProducts);
-    sortSelect.addEventListener('change', filterProducts);
-}
-
-function filterProducts() {
-    // In a real app, this would filter and sort the products
-    // For demo purposes, we'll just reload the products
-    loadBuyerProducts();
-}
+document.getElementById('profileImage').addEventListener('change', function (event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById('profilePreview').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
