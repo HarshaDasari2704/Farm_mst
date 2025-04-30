@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
+  background-color: #fff; /* White background */
 }
 
 header {
@@ -217,4 +217,44 @@ button:hover {
   right: 0;
 }
 
-.cart-popup
+.cart-popup-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cart-popup-content h3 {
+  margin-top: 0;
+}
+
+.cart-popup .total {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-popup button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cart-popup button:hover {
+  background-color: #45a049;
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.close-cart-btn {
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  color: #333;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0;
+}
